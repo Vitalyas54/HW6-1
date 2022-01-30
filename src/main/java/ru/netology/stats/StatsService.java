@@ -61,8 +61,9 @@ public class StatsService {
 
     public int numMonthsMaxSales(int[] sales) { // Считаем количество месяцев с продажами больше средней сумму всех продаж
         int monthCount = 0;
+        int average = findSalesAvg(sales);
         for (int sale : sales) {
-            if (sale > findSalesAvg(sales)) {
+            if (sale > average) {
                 monthCount = monthCount + 1;
             }
         }
@@ -71,8 +72,9 @@ public class StatsService {
 
     public int numMonthsMinSales(int[] sales) { // Считаем количество месяцев с продажами меньше средней сумму всех продаж
         int monthCount = 0;
+        int average = findSalesAvg(sales);
         for (int sale : sales) {
-            if (sale < findSalesAvg(sales)) {
+            if (sale < average) {
                 monthCount = monthCount + 1;
             }
         }
